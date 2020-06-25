@@ -9,8 +9,12 @@ const app = props => {
         { name: "Moriah", age: 32},
         { name: "Andrew", age: 35},
         { name: "Kerrigan", age: 9}
-    ]
+    ],
+        otherState: "some other value;"
 });
+    const [otherState, setOtherState] = useState("another value");
+    console.log(personsState, otherState);
+
 
     const switchNameHandler = () => {
         setPersonsState({
