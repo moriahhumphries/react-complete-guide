@@ -15,7 +15,6 @@ const app = props => {
     const [otherState, setOtherState] = useState("another value");
     console.log(personsState, otherState);
 
-
     const switchNameHandler = () => {
         setPersonsState({
             persons: [
