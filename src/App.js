@@ -5,13 +5,13 @@ import Person from './Person/Person';
 
 const app = props => {
     const [personsState, setPersonsState] = useState({
-    persons: [
-        { name: "Moriah", age: 32},
-        { name: "Andrew", age: 35},
-        { name: "Kerrigan", age: 9}
-    ],
+        persons: [
+            {name: "Moriah", age: 32},
+            {name: "Andrew", age: 35},
+            {name: "Kerrigan", age: 9}
+        ],
         otherState: "some other value;"
-});
+    });
     const [otherState, setOtherState] = useState("another value");
     console.log(personsState, otherState);
 
@@ -22,23 +22,34 @@ const app = props => {
                 {name: "Andrew", age: 35},
                 {name: "Kerrigan", age: 10}
             ]
-        });
-    };
+        })
+    }
 
-    return (
-      <div className="App">
-       <h1>Hi, I'm a React App</h1>
-          <button onClick={switchNameHandler}>Switch Name</button>
-        <Person
-            name={personsState.persons[0].name} age={personsState.persons[0].age}/>
-          <Person
-              name={personsState.persons[1].name} age={personsState.persons[1].age}/>
-          <Person
-              name={personsState.persons[2].name} age={personsState.persons[2].age}>My hobbies: screaming</Person>
-      </div>
-    );
+    render();
+    {
+        const style = {
+            backgroundColor: 'grey',
+            font: 'inherit',
+            border: '1px solid blue'
+        };
+
+        return (
+            <div className="App">
+                <h1>Hi, I'm a React App</h1>
+                <button
+                    style={style}
+                    onClick={switchNameHandler}>Switch Name
+                </button>
+                <Person
+                    name={personsState.persons[0].name} age={personsState.persons[0].age}/>
+                <Person
+                    name={personsState.persons[1].name} age={personsState.persons[1].age}/>
+                <Person
+                    name={personsState.persons[2].name} age={personsState.persons[2].age}>My hobbies: screaming</Person>
+            </div>
+        );
+    }
 }
-
 
 export default app;
 
